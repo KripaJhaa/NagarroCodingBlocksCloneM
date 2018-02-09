@@ -1,0 +1,130 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+ 
+/* Name of the class has to be "Main" only if the class is public. */
+class Ideone
+{
+	static String Str[]={"zero","one","two","three","four","five","six","seven","eight","nine"};
+ 
+	public static void main (String[] args) throws java.lang.Exception
+	{
+		// your code goes here
+ 
+		Scanner sc=new Scanner(System.in);
+ 
+		int n=2058;
+ 
+ 
+ 
+		// while(n%(10*4)==0){
+ 
+		// 	n/=10;
+ 
+		// }
+ 
+		// 
+ 
+		ToH(3,'A','B','C');
+ 
+ 
+		//print(n);
+		//funcF(n);
+		//System.out.println();
+		//funcB(n);
+	}
+ 
+ 
+	static void print(int n){
+ 
+		if(n<=0)return;
+ 
+		print(n/10);
+		//System.out.println("<>"+n);
+		System.out.println(Str[n%10]);
+ 
+	}
+ 
+ 
+	static void bubble_Sort(int arr[],int be,int en){
+		if(en<=be)return;
+ 
+	       bubble_Sort(arr,be+1,en);	
+ 
+	       if(arr[be]>arr[be+1]){
+ 
+		arr[be]^=arr[be+1];
+		arr[be+1]^=arr[be];
+		arr[be]^=arr[be+1];
+ 
+	       bubble_Sort(arr,be+1,en);	
+ 
+ 
+	       }
+ 
+	}
+ 
+ 
+	static void ToH( int n,char src,char des,char aux){
+ 
+		if(n==0){
+		    return;
+		}
+ 
+		ToH(n-1,src,aux,des);
+ 
+		System.out.println("move Disc "+n+"-- from "+src+" to "+des);
+ 
+		ToH(n-1,aux,des,src);
+ 
+	}
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+	static void bubble(int arr[],int n){
+ 
+		if(n<=0)return;
+ 
+		for(int i=0;i<n;i++){
+ 
+			if(arr[i]<arr[i+1]){
+ 
+				arr[i]^=arr[i+1];
+				arr[i+1]^=arr[i];
+				arr[i]^=arr[i+1];
+ 
+ 
+			}
+		}
+ 
+ 
+		bubble(arr,n-1);
+ 
+ 
+	}
+ 
+ 
+ 
+	static void funcF(int n){
+		if(n<=0)return;
+ 
+		funcF(n-1);
+		System.out.print(n+" ");
+ 
+	}
+ 
+ 
+	static void funcB(int n){
+		if(n<=0)return;
+ 
+		System.out.print(n+" ");
+		funcB(n-1);
+	}
+}
